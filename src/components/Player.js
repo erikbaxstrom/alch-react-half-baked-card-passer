@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useGameContext } from '../context/GameContext';
 import CardList from './CardList';
 
 export default function Player({
@@ -10,6 +11,8 @@ export default function Player({
   selectedCard,
   to,
 }) {
+  const { something, setSomething } = useGameContext();
+
   return (
     <div
       className={`player ${to === player ? 'selected-player' : ''}`}
